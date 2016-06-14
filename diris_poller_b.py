@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- 
 
-import time, sys
+import time
 import datetime
 #from pymodbus.client.sync import ModbusTcpClient as ModbusClient
 from pymodbus.constants import Endian
@@ -36,8 +36,8 @@ if __name__  == "__main__":
 	diris_modbus = ModbusClient(method='rtu', port=diris_port, timeout=1, baudrate=9600, parity='E')
 	
 	if (not diris_modbus.connect()):
-		print "Connection Failed"
-		sys.exit()
+		#sys.exit()
+		raise SystemExit("Connection Failed\nExiting...")
 	
 	
 
